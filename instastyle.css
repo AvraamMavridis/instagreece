@@ -1,0 +1,16 @@
+.instaimg{
+    width: 200px;
+    height: 200px;
+}
+
+.instaimg > img{
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#map-canvas{
+    height: 500px;
+    width: 100%;
+}
