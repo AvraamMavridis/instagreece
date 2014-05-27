@@ -1,28 +1,43 @@
 
+var mymap = undefined;
 
+var tickerobjects = {};
 
 function InstaGreece (){
 
-    this.mymap = undefined;
 
-    this.parse = function(response){
+    this.parse = function(response) {
+
 
         var InstaGreecePic = {};
+        if (response != undefined) {
+            for (var i = 0; i < response.data.length; i++) {
 
-        console.log(response.data[0]);
 
-        for (var i = 0; i < response.data.length; i++) {
-            InstaGreecePic.imgurl = response.data[i].images.standard_resolution.url;
-            InstaGreecePic.id = response.data[i].id;
-            if(response.data[i].location!=undefined){
-                InstaGreecePic.latitude = response.data[i].location.latitude;
-                InstaGreecePic.longtitude = response.data[i].location.longitude;
-                this.addToMap(InstaGreecePic);
+                InstaGreecePic.imgurl = response.data[i].images.standard_resolution.url;
+                InstaGreecePic.id = response.data[i].id;
+
+                if (response.data[i].caption != null) {
+                    InstaGreecePic.full_name = response.data[i].user.full_name;
+                    InstaGreecePic.profile_picture = response.data[i].user.profile_picture;
+                    InstaGreecePic.username = response.data[i].user.username;
+                }
+
+                if (response.data[i].location != null) {
+                    InstaGreecePic.latitude = response.data[i].location.latitude;
+                    InstaGreecePic.longtitude = response.data[i].location.longitude;
+                    this.addToMap(InstaGreecePic);
+                }
+
+                this.addToTicker(InstaGreecePic);
+                tickerobjects[InstaGreecePic.id] = InstaGreecePic;
+
+
             }
 
+            //$( ".map" ).append( "<div class='instaimg'><img src="+InstaGreecePic.imgurl+">Hello</img></div>" );
+            }
 
-            $( ".map" ).append( "<div class='instaimg'><img src="+InstaGreecePic.imgurl+">Hello</img></div>" );
-        }
     }
 
     this.requestPhotos = function(){
@@ -37,9 +52,11 @@ function InstaGreece (){
             contentType: "application/json",
             dataType: 'jsonp',
             success: function(json) {
+                $(".windows8").css({visibility:"hidden"});
                 that.parse(json);
             },
             error: function(e) {
+                console.log(e.message);
                 that.parse(e.message);
             }
         });
@@ -49,51 +66,150 @@ function InstaGreece (){
 
     this.addToMap = function(InstaGreecePic){
 
-
+        var pin_icon = "images/instagram.png";
 
         var marker = new google.maps.Marker({
             position: {lat: InstaGreecePic.latitude, lng: InstaGreecePic.longtitude},
             map: mymap,
             title: 'Hello World!',
-            optimized:false
+            optimized:false,
+            icon:pin_icon
 
         });
 
 
-       $.get("instagram-marker-template.html",function(data){
+       var infowindowhtml = "<div id='instacontainer'><img id='instaimg' src="+InstaGreecePic.imgurl+"><div id='full_name'>" +InstaGreecePic.full_name+
+           "</div><div id='profile_pic' style='background-image: url("+InstaGreecePic.profile_picture+");'></div>" +
+           "<a id='username' target='_blank' href='http://www.instagram.com/"+InstaGreecePic.username+"'>@"+InstaGreecePic.username+"</a></div>";
 
-           var infowindow = new google.maps.InfoWindow({
-               content: data
-           });
 
-           google.maps.event.addListener(marker, 'click', function() {
 
-               infowindow.open(mymap,marker);
-           });
+        var infowindow = new google.maps.InfoWindow({
+            content: infowindowhtml
+        });
 
-       });
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(mymap,marker);
+        });
 
+    }
+
+
+    this.addToTicker = function(InstaGreecePic){
+
+        if(!(InstaGreecePic.id in tickerobjects)){
+            $( ".ticker" ).append( "<div class='col-md-12 ticker-container'><a href="+InstaGreecePic.imgurl+"><img class='ticker-img' src="+InstaGreecePic.imgurl+"></div></a>");
+        }
+    }
 
     this.initializeMap = function(){
         var myLatlng = new google.maps.LatLng(38.2749497,23.8102717);
         var mapOptions = {
-            zoom: 6,
+            zoom: 7,
             center: myLatlng
         }
-        this.mymap = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        mymap = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        refresh();
     }
-
-
-
 
 };
 
-var makis = new InstaGreece();
 
-function refresh(){
-    makis.requestPhotos();
+
+function TwitterGreece(){
+
+
+    this.addToMap = function(TwitterGreece){
+
+
+
+        var pin_icon = "images/twitter.png";
+
+        var marker = new google.maps.Marker({
+            position: {lat: TwitterGreece.latitude, lng: TwitterGreece.longtitude},
+            map: mymap,
+            title: 'Hello World!',
+            optimized:false,
+            icon:pin_icon
+
+        });
+
+
+        var infowindowhtml = "<div id='twittercontainer'><div id='twittertext'>"+TwitterGreece.tweet+"</div>" +
+            "<div id='twitter-profile-pic' style='background-image: url("+TwitterGreece.profile_image+");'></div></div>";
+
+        var infowindow = new google.maps.InfoWindow({
+            content: infowindowhtml
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(mymap,marker);
+        });
+
+        //$(".windows8").css({visibility:"hidden"});
+
+
+
+
+    }
+
+    this.parse = function(response){
+
+        console.log(response);
+
+        var TwitterGreece = {};
+
+
+        for (var i = 0; i < response.length; i++) {
+            if(response!=undefined){
+                TwitterGreece.tweet = response[i].text;
+                TwitterGreece.latitude = response[i].lat;
+                TwitterGreece.longtitude = response[i].long;
+                TwitterGreece.username = response[i].username;
+                TwitterGreece.profile_image = response[i].profile_image;
+                this.addToMap(TwitterGreece);
+            }
+
+            //$( ".map" ).append( "<div class='instaimg'><img src="+InstaGreecePic.imgurl+">Hello</img></div>" );
+        }
+    }
+
+    this.requestPhotos = function(){
+        var url = "http://localhost/instagreece/twitter.php";
+        var that = this;
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            async: false,
+            jsonpCallback: 'jsonCallback',
+            contentType: "application/json",
+            dataType: 'json',
+            success: function(json) {
+                that.parse(json);
+            },
+            error: function(e) {
+                console.log("error");
+
+            }
+        });
+
+    };
 }
 
+
+var makis = new InstaGreece();
+var makis2 = new TwitterGreece();
+
+function refresh(){
+    $(".windows8").css({visibility:"visible"});
+    makis.requestPhotos();
+    makis2.requestPhotos();
+}
+
+
+
+setInterval(refresh, 60000);
 
 
 google.maps.event.addDomListener(window, 'load', makis.initializeMap);

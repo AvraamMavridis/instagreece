@@ -3,23 +3,85 @@
 <head lang="en">
     <meta charset="UTF-8">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="imagelightbox.min.js"></script>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="instagreece.js"></script>
     <link rel="stylesheet" href="instastyle.css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="instagreece.js"></script>
+
+
+
     <title>InstaGreece</title>
 </head>
 <body>
 
-<div class="container">
-    <div class="row map">
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img id="logo" src="images/logo.png"></a>
+        </div>
 
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">How it works</a></li>
+                <li><a href="index.html">Contact us</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-md-8  map">
+            <div id="map-canvas"></div>
+        </div>
+        <div class="col-md-4 ticker">
+
+        </div>
     </div>
-    <div id="lol"></div>
 </div>
-    <div id="map-canvas"></div>
-<button type="button" onclick="refresh()">Refresh</button>
+<div class="windows8 col-md-2 col-md-offset-4" style="visibility: hidden">
+    <div class="wBall" id="wBall_1">
+        <div class="wInnerBall">
+        </div>
+    </div>
+    <div class="wBall" id="wBall_2">
+        <div class="wInnerBall">
+        </div>
+    </div>
+    <div class="wBall" id="wBall_3">
+        <div class="wInnerBall">
+        </div>
+    </div>
+    <div class="wBall" id="wBall_4">
+        <div class="wInnerBall">
+        </div>
+    </div>
+    <div class="wBall" id="wBall_5">
+        <div class="wInnerBall">
+        </div>
+    </div>
+</div>
+
+
+
+
+
 </body>
 </html>
+
+<script>
+    $( function()
+    {
+        $( '.ticker-a' ).imageLightbox();
+    });
+</script>
