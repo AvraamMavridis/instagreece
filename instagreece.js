@@ -11,16 +11,18 @@ function InstaGreece (){
 
         var InstaGreecePic = {};
         if (response != undefined) {
+            console.log(response.data[0]);
             for (var i = 0; i < response.data.length; i++) {
 
 
                 InstaGreecePic.imgurl = response.data[i].images.standard_resolution.url;
                 InstaGreecePic.id = response.data[i].id;
+                InstaGreecePic.full_name = response.data[i].user.full_name;
+                InstaGreecePic.profile_picture = response.data[i].user.profile_picture;
+                InstaGreecePic.username = response.data[i].user.username;
 
                 if (response.data[i].caption != null) {
-                    InstaGreecePic.full_name = response.data[i].user.full_name;
-                    InstaGreecePic.profile_picture = response.data[i].user.profile_picture;
-                    InstaGreecePic.username = response.data[i].user.username;
+                    InstaGreecePic.text = response.data[i].caption.text;
                 }
 
                 if (response.data[i].location != null) {
@@ -80,7 +82,8 @@ function InstaGreece (){
 
        var infowindowhtml = "<div id='instacontainer'><img id='instaimg' src="+InstaGreecePic.imgurl+"><div id='full_name'>" +InstaGreecePic.full_name+
            "</div><div id='profile_pic' style='background-image: url("+InstaGreecePic.profile_picture+");'></div>" +
-           "<a id='username' target='_blank' href='http://www.instagram.com/"+InstaGreecePic.username+"'>@"+InstaGreecePic.username+"</a></div>";
+           "<a id='username' target='_blank' href='http://www.instagram.com/"+InstaGreecePic.username+"'>@"+InstaGreecePic.username+"</a>" +
+           "</div>";
 
 
 
@@ -98,7 +101,10 @@ function InstaGreece (){
     this.addToTicker = function(InstaGreecePic){
 
         if(!(InstaGreecePic.id in tickerobjects)){
-            $( ".ticker" ).append( "<div class='col-md-12 ticker-container'><a href="+InstaGreecePic.imgurl+"><img class='ticker-img' src="+InstaGreecePic.imgurl+"></div></a>");
+            $( ".ticker" ).prepend( "<div class='col-md-12 ticker-container'><a class='ticker-a' href="+InstaGreecePic.imgurl+"><img class='ticker-img' src="+InstaGreecePic.imgurl+"></a>" +
+                "<div class='ticker-instagram-icon'></div>" +
+                "<div class='ticker-instagram-name'>"+InstaGreecePic.full_name+"</div>" +
+                "<div class='ticker-instagram-text'>"+InstaGreecePic.text+"</div></div>");
         }
     }
 
@@ -197,6 +203,16 @@ function TwitterGreece(){
     };
 }
 
+
+
+$( function()
+{
+    $( '.ticker-a' ).imageLightbox();
+});
+
+$(document).ready(function() {
+    $('.ticker').enscroll();
+});
 
 var makis = new InstaGreece();
 var makis2 = new TwitterGreece();

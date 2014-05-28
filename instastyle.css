@@ -5,70 +5,15 @@
 
 body{
     background-color: #5388d5;
+    height: 800px;
+    max-height: 800px;
 }
 
 #logo{
     height: 100%;
 }
 
-.navbar-default {
-    background-color: #5388d5;
-    border-color: #427694;
-    height: 80px;
-    border: 0 !important;
 
-}
-.navbar-default .navbar-brand {
-    color: #ecf0f1;
-    height: 100px;
-}
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-    color: #7ac3fe;
-}
-.navbar-default .navbar-text {
-    color: #ecf0f1;
-}
-.navbar-default .navbar-nav > li > a {
-    color: #ecf0f1;
-    margin-top: 25px;
-    font-family: 'Indie Flower', cursive;
-    font-size: 28px;
-}
-
-.navbar-default .navbar-nav > li > a:hover {
-    font-size: 30px;
-}
-
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    color: #7ac3fe;
-}
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    color: #7ac3fe;
-    background-color: #427694;
-}
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    color: #7ac3fe;
-    background-color: #427694;
-}
-.navbar-default .navbar-toggle {
-    border-color: #427694;
-}
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-    background-color: #427694;
-}
-.navbar-default .navbar-toggle .icon-bar {
-    background-color: #ecf0f1;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-    border-color: #ecf0f1;
-}
-.navbar-default .navbar-link {
-    color: #ecf0f1;
-}
-.navbar-default .navbar-link:hover {
-    color: #7ac3fe;
-}
 
 @media (max-width: 767px) {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
@@ -547,11 +492,12 @@ body{
 
 
 
+
 .ticker{
     height: 700px;
     max-height: 700px;
-    background-color: white;
     overflow-y: auto;
+    color: #000000;
 }
 
 .ticker-img{
@@ -564,6 +510,14 @@ body{
     -webkit-border-radius: 4px;
     border-radius: 4px;
 
+}
+
+.ticker-img:hover{
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
 }
 
 .ticker-container{
@@ -586,7 +540,52 @@ body{
     border-color:black;
     border-width: 1px;
     -webkit-border-radius: 4px;
-    border-radius: 4px;
-
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 10px 1000px 300px #01010D;
+    box-shadow: 10px 10px 1000px 300px #01010D;
 }
 
+.ticker-instagram-icon{
+    margin-top: -180px;
+    margin-left: 210px;
+    height: 32px;
+    width: 32px;
+    background-image: url("images/ticker/Instagram.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.ticker-instagram-name{
+    ont-family: 'Indie Flower', cursive;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 250px;
+    margin-top: -30px;
+}
+
+.ticker-instagram-text{
+    text-overflow: ellipsis; /* will make [...] at the end */
+    margin-top: 20px;
+    overflow:hidden; /* older browsers */
+    margin-left: 210px;
+    word-wrap:break-word;
+    max-width: 195px;
+    width: 195px;
+    max-height: 130px;
+    height: 130px;
+}
+
+
+.vertical-track {
+    width: 16px;            /* How wide is the scrollbar going to be? */
+    background-color: #aaa; /* What color should the vertical track be? */
+    border-style: solid;
+    border-width: 1px;
+}
+
+.vertical-handle {
+    width: 14px;            /* How wide is the scrollbar handle? */
+    background-color: #aaf; /* What color should the handle be? */
+    border-style: solid;
+    border-width: 1px;
+}
