@@ -1,0 +1,246 @@
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+
+
+
+#logo{
+    height: 100%;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+
+.instaimg{
+    width: 200px;
+    height: 200px;
+}
+
+.instaimg > img{
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#map-canvas{
+    height: 605px;
+    width: 100%;
+    opacity: 1 !important;
+}
+
+/* Instagram container */
+#instacontainer{
+    height: 372px;
+    width: 318px;
+    padding-top: 20px;
+    background-image: url(../img/polaroid_frame-1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+#instaimg{
+    margin-top: 12px;
+    width: 255px;
+    height: 255px;
+    background-size: cover;
+}
+
+#full_name{
+    color: black;
+    font-size: 16px;
+    font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    display: block;
+    text-align: left;
+    margin-left: 80px;
+    margin-top: 10px;
+}
+
+
+#username{
+    font-size: 16px;
+    font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin-top: -25px;
+    display: block;
+    color: #5bc0de;
+}
+
+#username:hover{
+    font-size: 18px;
+}
+
+#profile_pic{
+    width: 48px;
+    height: 48px;
+    margin-top: -30px;
+    margin-left: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+/*Twitter */
+
+
+#twittercontainer{
+    height: 372px;
+    width: 318px;
+    padding-top: 20px;
+    background-image: url(../img/polaroid_frame-1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#twittertext{
+    font-size: 20px;
+    font-family: 'Indie Flower', cursive;
+    color: white;
+    width: 255px;
+    height: 255px;
+    margin-left: 40px;
+    margin-top: 35px;
+}
+
+#twitter-profile-pic{
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    margin-top: -10px;
+    margin-left: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+.ticker{
+    height: 600px;
+    max-height: 600px;
+    overflow-y: auto;
+    color: #000000;
+    width: 500px !important;
+    margin-left: -20px;
+}
+
+.ticker-class{
+    margin-top: 0px;
+}
+.ticker-img{
+    height: 170px;
+    width: 180px;
+    margin-top: 9px;
+    margin-left: -270px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.ticker-img:hover{
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+}
+
+.ticker-container{
+    height: 200px;
+    background-image: url("../img/ticker-container.png");
+    background-repeat: no-repeat;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#imagelightbox
+{
+    position: fixed;
+    z-index: 9999;
+    border-style:solid;
+    border-color:black;
+    border-width: 1px;
+    -webkit-border-radius: 4px;
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 10px 1000px 300px #01010D;
+    box-shadow: 10px 10px 1000px 300px #01010D;
+}
+
+.ticker-instagram-icon{
+    margin-top: -170px;
+    margin-left: 190px;
+    height: 32px;
+    width: 32px;
+    background-image: url("../img/ticker/Instagram.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.ticker-instagram-name{
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 230px;
+    margin-top: -30px;
+    text-align: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 150px;
+}
+
+.ticker-instagram-text{
+    text-overflow: ellipsis;
+    margin-top: 11px;
+    margin-left: 194px;
+    word-wrap: break-word;
+    max-width: 195px;
+    width: 195px;
+    max-height: 130px;
+    height: 130px;
+    font-size: 14px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.vertical-track {
+    width: 16px;
+    background-color: #BAC3C4;
+    border-style: solid;
+    border-width: 1px;
+    margin-left: -70px;
+}
+
+.vertical-handle {
+    width: 25px;
+    background-color: #5bc0de;
+    border-style: solid;
+    border-color: #0B0F0F;
+    border-width: 1px;
+    margin-left: -13px;
+}
+
+
+.main-container{
+    margin-top: 40px;
+    opacity: 1 !important;
+}
+
+.jumbotron{
+    opacity: 0.8 !important;
+    -webkit-border-radius: 50px;
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius: 50px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-radius: 50px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
