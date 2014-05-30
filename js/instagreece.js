@@ -1,7 +1,11 @@
 
 var mymap = undefined;
 
-var tickerobjects = {};
+var Insta = new InstaGreece();
+var Tweet = new TwitterGreece();
+var Flickr = new FlickrGreece();
+var tickerobjects = {}
+
 
 function InstaGreece (){
 
@@ -11,7 +15,6 @@ function InstaGreece (){
 
         var InstaGreecePic = {};
         if (response != undefined) {
-            console.log(response.data[0]);
             for (var i = 0; i < response.data.length; i++) {
 
 
@@ -20,6 +23,15 @@ function InstaGreece (){
                 InstaGreecePic.full_name = response.data[i].user.full_name;
                 InstaGreecePic.profile_picture = response.data[i].user.profile_picture;
                 InstaGreecePic.username = response.data[i].user.username;
+
+                var date = new Date(response.data[i].created_time*1000);
+                var hours = date.getHours();
+                var minutes = date.getMinutes();
+                var seconds = date.getSeconds();
+
+                var formattedTime = hours + ':' + minutes + ':' + seconds;
+
+                InstaGreecePic.create_time = formattedTime;
 
                 if (response.data[i].caption != null) {
                     InstaGreecePic.text = response.data[i].caption.text;
@@ -30,6 +42,7 @@ function InstaGreece (){
                     InstaGreecePic.longtitude = response.data[i].location.longitude;
                     this.addToMap(InstaGreecePic);
                 }
+
 
                 this.addToTicker(InstaGreecePic);
                 tickerobjects[InstaGreecePic.id] = InstaGreecePic;
@@ -54,11 +67,11 @@ function InstaGreece (){
             contentType: "application/json",
             dataType: 'jsonp',
             success: function(json) {
-                $(".windows8").css({visibility:"hidden"});
                 that.parse(json);
+                Tweet.requestPhotos();
             },
             error: function(e) {
-                console.log(e.message);
+                Tweet.requestPhotos();
                 that.parse(e.message);
             }
         });
@@ -68,10 +81,10 @@ function InstaGreece (){
 
     this.addToMap = function(InstaGreecePic){
 
-        var pin_icon = "images/instagram.png";
+        var pin_icon = "img/instagram.png";
 
         var marker = new google.maps.Marker({
-            position: {lat: InstaGreecePic.latitude, lng: InstaGreecePic.longtitude},
+            position: {lat: parseFloat(InstaGreecePic.latitude), lng: parseFloat(InstaGreecePic.longtitude)},
             map: mymap,
             title: 'Hello World!',
             optimized:false,
@@ -80,7 +93,7 @@ function InstaGreece (){
         });
 
 
-       var infowindowhtml = "<div id='instacontainer'><img id='instaimg' src="+InstaGreecePic.imgurl+"><div id='full_name'>" +InstaGreecePic.full_name+
+       var infowindowhtml = "<div id='instacontainer'><a class='image-lightbox' href="+InstaGreecePic.imgurl+"><img id='instaimg' src="+InstaGreecePic.imgurl+"></a><div id='full_name'>" +InstaGreecePic.full_name+
            "</div><div id='profile_pic' style='background-image: url("+InstaGreecePic.profile_picture+");'></div>" +
            "<a id='username' target='_blank' href='http://www.instagram.com/"+InstaGreecePic.username+"'>@"+InstaGreecePic.username+"</a>" +
            "</div>";
@@ -101,9 +114,9 @@ function InstaGreece (){
     this.addToTicker = function(InstaGreecePic){
 
         if(!(InstaGreecePic.id in tickerobjects)){
-            $( ".ticker" ).prepend( "<div class='col-md-12 ticker-container'><a class='ticker-a' href="+InstaGreecePic.imgurl+"><img class='ticker-img' src="+InstaGreecePic.imgurl+"></a>" +
-                "<div class='ticker-instagram-icon'></div>" +
-                "<div class='ticker-instagram-name'>"+InstaGreecePic.full_name+"</div>" +
+            $( ".ticker" ).prepend( "<div class='col-md-12 ticker-container'><a class='image-lightbox' href="+InstaGreecePic.imgurl+"><img class='ticker-img' src="+InstaGreecePic.imgurl+"></a>" +
+                "" +
+                "<div class='ticker-instagram-name'><i class='fa fa-instagram'></i>"+" "+InstaGreecePic.full_name+"</div>" +
                 "<div class='ticker-instagram-text'>"+InstaGreecePic.text+"</div></div>");
         }
     }
@@ -129,10 +142,10 @@ function TwitterGreece(){
 
 
 
-        var pin_icon = "images/twitter.png";
+        var pin_icon = "img/twitter.png";
 
         var marker = new google.maps.Marker({
-            position: {lat: TwitterGreece.latitude, lng: TwitterGreece.longtitude},
+            position: {lat: parseFloat(TwitterGreece.latitude), lng: parseFloat(TwitterGreece.longtitude)},
             map: mymap,
             title: 'Hello World!',
             optimized:false,
@@ -161,19 +174,22 @@ function TwitterGreece(){
 
     this.parse = function(response){
 
-        console.log(response);
 
         var TwitterGreece = {};
 
 
         for (var i = 0; i < response.length; i++) {
             if(response!=undefined){
+                TwitterGreece.id = response[i].id;
                 TwitterGreece.tweet = response[i].text;
                 TwitterGreece.latitude = response[i].lat;
                 TwitterGreece.longtitude = response[i].long;
                 TwitterGreece.username = response[i].username;
                 TwitterGreece.profile_image = response[i].profile_image;
                 this.addToMap(TwitterGreece);
+                this.addToTicker(TwitterGreece);
+                tickerobjects[TwitterGreece.id] = TwitterGreece;
+
             }
 
             //$( ".map" ).append( "<div class='instaimg'><img src="+InstaGreecePic.imgurl+">Hello</img></div>" );
@@ -181,7 +197,7 @@ function TwitterGreece(){
     }
 
     this.requestPhotos = function(){
-        var url = "http://localhost/instagreece/twitter.php";
+        var url = "http://localhost/instagreece/js/twitter.php";
         var that = this;
 
         $.ajax({
@@ -192,7 +208,9 @@ function TwitterGreece(){
             contentType: "application/json",
             dataType: 'json',
             success: function(json) {
+                $( "#circularG" ).hide( 2000);
                 that.parse(json);
+                Flickr.requestPhotos();
             },
             error: function(e) {
                 console.log("error");
@@ -201,32 +219,126 @@ function TwitterGreece(){
         });
 
     };
+
+    this.addToTicker = function(TwitterGreece){
+        if(!(TwitterGreece.id in tickerobjects)){
+            $( ".ticker" ).prepend( "<div class='col-md-12 ticker-twitter-container'><a href="+TwitterGreece.profile_image+"><img class='ticker-twitter-img' src="+TwitterGreece.profile_image+"></a>" +
+                "" +
+                "<div class='ticker-twitter-name'><i class='fa fa-twitter twitter-ticker-icon'></i>"+TwitterGreece.username+"</div>" +
+                "<div class='ticker-twitter-text'>"+TwitterGreece.tweet+"</div></div>");
+        }
+    }
+
+
+
+}
+
+
+
+function FlickrGreece(){
+
+
+    this.parse = function(response){
+
+        FlickrGreecePic = {};
+
+        for(var i=0; i<response.length; i++){
+            FlickrGreecePic.id = response[i].id;
+            FlickrGreecePic.owner = response[i].owner;
+            FlickrGreecePic.ownername = response[i].ownername;
+            FlickrGreecePic.title = response[i].title;
+            FlickrGreecePic.lat = response[i].latitude;
+            FlickrGreecePic.lot = response[i].longtitude;
+            FlickrGreecePic.img = 'http://farm'+response[i].farm+'.staticflickr.com/'+response[i].server+'/'+response[i].id+'_'+response[i].secret+'_b.jpg'
+            this.addToTicker(FlickrGreecePic);
+            tickerobjects[FlickrGreecePic.id] = FlickrGreecePic;
+        }
+
+    }
+
+
+
+    this.requestPhotos = function(){
+        var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=cc1eb78b0a27dbb2c66cf986b2e48caf&format=json&text=greece&extras=owner_name,geo&jsoncallback=?";
+        var that = this;
+        $.ajax({
+            type: 'GET',
+            url: url,
+            async: false,
+            contentType: "application/json",
+            dataType: 'jsonp',
+            success: function(json) {
+                that.parse(json.photos.photo);
+
+            },
+            error: function(e) {
+                console.log(e);
+            }
+        });
+
+    };
+
+
+    this.addToTicker = function(FlickrGreecePic){
+
+        if(!(FlickrGreecePic.id in tickerobjects)){
+            $( ".ticker" ).prepend( "<div class='col-md-12 ticker-container'><a class='image-lightbox' href="+FlickrGreecePic.img+"><img class='ticker-img' src="+FlickrGreecePic.img+"></a>" +
+                "" +
+                "<div class='ticker-instagram-name'><i class='fa fa-flickr'></i>"+" "+FlickrGreecePic.ownername+"</div>" +
+                "<div class='ticker-instagram-text'>"+FlickrGreecePic.title+"</div></div>");
+        }
+    }
+
+    this.addToMap = function(FlickrGreecePic){
+        var pin_icon = "img/twitter.png";
+        var marker = new google.maps.Marker({
+            position: {lat: parseFloat(FlickrGreecePic.lat), lng: parseFloat(FlickrGreecePic.lot)},
+            map: mymap,
+            title: 'Hello World!',
+            optimized:false,
+            icon:pin_icon
+
+        });
+
+        var infowindowhtml = "<div id='instacontainer'><a class='image-lightbox' href="+FlickrGreecePic.img+"><img id='instaimg' src="+FlickrGreecePic.img+"></a><div id='full_name'>" +FlickrGreecePic.ownername+
+            "</div></div>" +
+            "<a id='username' target='_blank' href='http://www.flickr.com/"+FlickrGreecePic.owner+"'>"+FlickrGreecePic.ownername+"</a>" +
+            "</div>";
+
+
+        var infowindow = new google.maps.InfoWindow({
+            content: infowindowhtml
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(mymap,marker);
+        });
+    }
+
 }
 
 
 
 $( function()
 {
-    $( '.ticker-a' ).imageLightbox();
+    $( '.image-lightbox' ).imageLightbox();
 });
 
 $(document).ready(function() {
     $('.ticker').enscroll();
 });
 
-var makis = new InstaGreece();
-var makis2 = new TwitterGreece();
+
 
 function refresh(){
-    $(".windows8").css({visibility:"visible"});
-    makis.requestPhotos();
-    makis2.requestPhotos();
+    $( "#circularG" ).show(500);
+    Insta.requestPhotos();
 }
 
 
 
-setInterval(refresh, 60000);
+setInterval(refresh, 3000000);
 
 
-google.maps.event.addDomListener(window, 'load', makis.initializeMap);
+google.maps.event.addDomListener(window, 'load', Insta.initializeMap);
 

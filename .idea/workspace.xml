@@ -2,31 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3106d4d-abc4-4a4c-b3ab-9500c39240a5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/instastyle.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/instagram-marker-template.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/instastyle.css" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/OAuth.php" afterPath="$PROJECT_DIR$/js/OAuth.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/callback.php" afterPath="$PROJECT_DIR$/js/callback.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/enscroll-0.6.0.min.js" afterPath="$PROJECT_DIR$/js/enscroll-0.6.0.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/imagelightbox.min.js" afterPath="$PROJECT_DIR$/js/imagelightbox.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/instagram.png" afterPath="$PROJECT_DIR$/img/instagram.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/logo.png" afterPath="$PROJECT_DIR$/img/logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/papyrus.png" afterPath="$PROJECT_DIR$/img/papyrus.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/pin_icon.png" afterPath="$PROJECT_DIR$/img/pin_icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/pin_icon_32.png" afterPath="$PROJECT_DIR$/img/pin_icon_32.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/polaroid_frame-1.png" afterPath="$PROJECT_DIR$/img/polaroid_frame-1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/ticker-container.png" afterPath="$PROJECT_DIR$/img/ticker-container.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/ticker/instagram.png" afterPath="$PROJECT_DIR$/img/ticker/instagram.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/twitter.png" afterPath="$PROJECT_DIR$/img/twitter.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/initialize.js" afterPath="$PROJECT_DIR$/js/initialize.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/instagreece.js" afterPath="$PROJECT_DIR$/js/instagreece.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lightbox.css" afterPath="$PROJECT_DIR$/js/lightbox.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lightbox.min.js" afterPath="$PROJECT_DIR$/js/lightbox.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/twitter.php" afterPath="$PROJECT_DIR$/js/twitter.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/twittergreece.js" afterPath="$PROJECT_DIR$/js/twittergreece.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/twitteroauth.php" afterPath="$PROJECT_DIR$/js/twitteroauth.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/spinner.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/instagreece.js" afterPath="$PROJECT_DIR$/js/instagreece.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/instastyle.css" afterPath="$PROJECT_DIR$/css/instastyle.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/twitter.php" afterPath="$PROJECT_DIR$/js/twitter.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="instagreece.iws" />
@@ -53,18 +33,53 @@
       <file leaf-file-name="instastyle.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/instastyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.153847" vertical-offset="2427" max-vertical-offset="3765">
-              <caret line="195" column="23" selection-start-line="195" selection-start-column="23" selection-end-line="195" selection-end-column="23" />
+            <state vertical-scroll-proportion="-12.230769" vertical-offset="2907" max-vertical-offset="4545">
+              <caret line="215" column="21" selection-start-line="215" selection-start-column="21" selection-end-line="215" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="spinner.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/spinner.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="2550">
+              <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7713126" vertical-offset="0" max-vertical-offset="2340">
-              <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+            <state vertical-scroll-proportion="-8.7" vertical-offset="15" max-vertical-offset="2640">
+              <caret line="30" column="18" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="instagreece.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/instagreece.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="2.8899083" vertical-offset="0" max-vertical-offset="3690">
+              <caret line="251" column="150" selection-start-line="251" selection-start-column="150" selection-end-line="251" selection-end-column="150" />
+              <folding>
+                <element signature="e#4155#4426#0" expanded="false" />
+                <element signature="n#!!block;n#TwitterGreece#0" expanded="false" />
+                <element signature="e#4505#5360#0" expanded="false" />
+                <marker date="1401369254000" expanded="true" signature="3099:3121" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="twitter.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/twitter.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.416666" vertical-offset="107" max-vertical-offset="900">
+              <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -89,7 +104,12 @@
         <option value="$PROJECT_DIR$/twitter.php" />
         <option value="$PROJECT_DIR$/instagreece.js" />
         <option value="$PROJECT_DIR$/instastyle.css" />
+        <option value="$PROJECT_DIR$/js/twitter.php" />
+        <option value="$PROJECT_DIR$/css/spinner.css.html" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/css/spinner.css" />
+        <option value="$PROJECT_DIR$/css/instastyle.css" />
+        <option value="$PROJECT_DIR$/js/instagreece.js" />
       </list>
     </option>
   </component>
@@ -167,6 +187,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="instagreece" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instagreece" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instagreece" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -486,12 +520,12 @@
       <workItem from="1401217343644" duration="4135000" />
       <workItem from="1401247402312" duration="5620000" />
       <workItem from="1401301399095" duration="4344000" />
-      <workItem from="1401328482630" duration="2635000" />
+      <workItem from="1401328482630" duration="13300000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51254000" />
+    <option name="totallyTimeSpent" value="61919000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -515,7 +549,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -532,10 +566,10 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -566,7 +600,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
@@ -615,7 +649,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3570">
           <caret line="213" column="14" selection-start-line="213" selection-start-column="14" selection-end-line="213" selection-end-column="14" />
-          <folding />
+          <folding>
+            <element signature="e#4155#4426#0" expanded="false" />
+            <element signature="n#!!block;n#TwitterGreece#0" expanded="false" />
+            <element signature="e#4505#5360#0" expanded="false" />
+            <marker date="1401369254000" expanded="true" signature="3099:3121" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -647,7 +686,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2567" max-vertical-offset="3330">
           <caret line="211" column="1" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="1" />
-          <folding />
+          <folding>
+            <element signature="e#4155#4426#0" expanded="false" />
+            <element signature="n#!!block;n#TwitterGreece#0" expanded="false" />
+            <element signature="e#4505#5360#0" expanded="false" />
+            <marker date="1401369254000" expanded="true" signature="3099:3121" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -679,7 +723,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3045">
           <caret line="76" column="67" selection-start-line="76" selection-start-column="67" selection-end-line="76" selection-end-column="67" />
-          <folding />
+          <folding>
+            <element signature="e#4155#4426#0" expanded="false" />
+            <element signature="n#!!block;n#TwitterGreece#0" expanded="false" />
+            <element signature="e#4505#5360#0" expanded="false" />
+            <marker date="1401369254000" expanded="true" signature="3099:3121" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -711,7 +760,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="2745">
           <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
-          <folding />
+          <folding>
+            <element signature="e#4155#4426#0" expanded="false" />
+            <element signature="n#!!block;n#TwitterGreece#0" expanded="false" />
+            <element signature="e#4505#5360#0" expanded="false" />
+            <marker date="1401369254000" expanded="true" signature="3099:3121" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -743,7 +797,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1504" max-vertical-offset="2280">
           <caret line="136" column="4" selection-start-line="136" selection-start-column="4" selection-end-line="136" selection-end-column="4" />
-          <folding />
+          <folding>
+            <element signature="e#4155#4426#0" expanded="false" />
+            <element signature="n#!!block;n#TwitterGreece#0" expanded="false" />
+            <element signature="e#4505#5360#0" expanded="false" />
+            <marker date="1401369254000" expanded="true" signature="3099:3121" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -785,7 +844,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2085">
           <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
-          <folding />
+          <folding>
+            <element signature="e#4155#4426#0" expanded="false" />
+            <element signature="n#!!block;n#TwitterGreece#0" expanded="false" />
+            <element signature="e#4505#5360#0" expanded="false" />
+            <marker date="1401369254000" expanded="true" signature="3099:3121" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -817,7 +881,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="615">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#4155#4426#0" expanded="false" />
+            <element signature="n#!!block;n#TwitterGreece#0" expanded="false" />
+            <element signature="e#4505#5360#0" expanded="false" />
+            <marker date="1401369254000" expanded="true" signature="3099:3121" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -849,35 +918,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/instagreece.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2657" max-vertical-offset="3570">
-          <caret line="213" column="14" selection-start-line="213" selection-start-column="14" selection-end-line="213" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/twitter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5565553" vertical-offset="77" max-vertical-offset="855">
-          <caret line="34" column="26" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="26" />
+        <state vertical-scroll-proportion="-17.416666" vertical-offset="107" max-vertical-offset="900">
+          <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/instastyle.css">
+    <entry file="file://$PROJECT_DIR$/css/spinner.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.153847" vertical-offset="2427" max-vertical-offset="3765">
-          <caret line="195" column="23" selection-start-line="195" selection-start-column="23" selection-end-line="195" selection-end-column="23" />
+        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="2550">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7713126" vertical-offset="0" max-vertical-offset="2340">
-          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+        <state vertical-scroll-proportion="-8.7" vertical-offset="15" max-vertical-offset="2640">
+          <caret line="30" column="18" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="18" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/instastyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.230769" vertical-offset="2907" max-vertical-offset="4545">
+          <caret line="215" column="21" selection-start-line="215" selection-start-column="21" selection-end-line="215" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/instagreece.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.8899083" vertical-offset="0" max-vertical-offset="3690">
+          <caret line="251" column="150" selection-start-line="251" selection-start-column="150" selection-end-line="251" selection-end-column="150" />
+          <folding>
+            <element signature="e#4155#4426#0" expanded="false" />
+            <element signature="n#!!block;n#TwitterGreece#0" expanded="false" />
+            <element signature="e#4505#5360#0" expanded="false" />
+            <marker date="1401369254000" expanded="true" signature="3099:3121" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

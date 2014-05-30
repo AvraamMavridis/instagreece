@@ -24,20 +24,23 @@ $results = array();
 foreach ($tweets->{'statuses'} as $value) {
 
 
-    if($value->{'geo'}!=null){
+    if($value->{'geo'}!=null) {
         $text = $value->{'text'};
         $prop = get_object_vars($value->{'geo'});
         $lat = $prop['coordinates'][0];
         $long = $prop['coordinates'][1];
+    }
 
         $results []= array(
+            'id'=>$value->id_str,
+            'data'=>$value->created_at,
             'username'=>$value->user->name,
             'profile_image'=>$value->user->profile_image_url,
             'text' => $value->{'text'},
-            'lat' => $prop['coordinates'][0],
-            'long' => $prop['coordinates'][1]
+            'lat' => $lat,
+            'long' => $long
         );
-    }
+    //}
 
 
 }
